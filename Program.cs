@@ -6,8 +6,8 @@ namespace csharp
     {
         static void Main(string[] args)
         {
-            var nipote = new Person(6, "Luca");
-            var nonno = new Person(75, "Aristide");
+            var nipote = new Person(6, "Luca", "Santillio");
+            var nonno = new Person(75, "Aristide", "Bianchi");
 
             var comparator = new PersonComparator();
 
@@ -15,6 +15,10 @@ namespace csharp
             Console.WriteLine("La persona più giovane è :"+listAge[0].name);//Luca
 
             Person[] listName = comparator.Compare(nipote, nonno, new NameComparator());
+            Console.WriteLine("La prima persona in ordine alfabetico è :"+listName[0].name);//Aristide
+
+
+            Person[] listName = comparator.Compare(nipote, nonno, new Surname());
             Console.WriteLine("La prima persona in ordine alfabetico è :"+listName[0].name);//Aristide
 
             Console.ReadLine();
@@ -57,6 +61,24 @@ namespace csharp
         }
     }
 
+    class Surname : IPersonStrategy
+    {
+        public Person[] Sort(Person p1, Person p2)
+        {
+            Person[] result = new Person[2];
+
+            if(p1.cognome.CompareTo(p2.cognome) > 0){
+                result[0] = p2;
+                result[1] = p1;
+            }else{
+                result[0] = p1;
+                result[1] = p2;
+            }
+
+            return result;
+        }
+    }
+
     interface IPersonStrategy
     {
         Person[] Sort(Person p1, Person p2);
@@ -78,11 +100,13 @@ namespace csharp
     {
         public int age;
         public string name;
+        public string cognome;
 
-        public Person(int a, string n)
+        public Person(int a, string n, string c)
         {
             age = a;
             name = n;
+            this.cognome = c;
         }
     }
 }

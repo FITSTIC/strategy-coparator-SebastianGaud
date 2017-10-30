@@ -18,3 +18,5 @@
 /home/matteo/Scrivania/Comparatore/obj/Debug/netcoreapp2.0/csharp.AssemblyInfo.cs
 /home/matteo/Scrivania/Comparatore/obj/Debug/netcoreapp2.0/csharp.dll
 /home/matteo/Scrivania/Comparatore/obj/Debug/netcoreapp2.0/csharp.pdb
+C:\Users\SEBASTIANO.GAUDEANO\Source\Repos\strategy-coparator-SebastianGaud\obj\Debug\netcoreapp2.0\csharp.dll
+C:\Users\SEBASTIANO.GAUDEANO\Source\Repos\strategy-coparator-SebastianGaud\obj\Debug\netcoreapp2.0\csharp.pdb
